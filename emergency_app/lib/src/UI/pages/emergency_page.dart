@@ -1,6 +1,8 @@
+import 'package:flutter/material.dart';
+
+import '../widgets/more_vert.dart';
 import '../widgets/icon_header.dart';
 import '../widgets/scrollable_vertical_list.dart';
-import 'package:flutter/material.dart';
 
 class EmergencyPage extends StatelessWidget {
   const EmergencyPage({super.key});
@@ -9,15 +11,15 @@ class EmergencyPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: SafeArea(
-        child: Column(
-          // crossAxisAlignment: CrossAxisAlignment.start,
+        child: Stack(
           children: [
+            ScrollableVerticalList(),
             IconHeader(
-              subtitle: 'esto es el subtítulo',
+              subtitle: 'Esto es el subtítulo',
               title: 'Esto es el TÍTULO',
               icon: Icons.add,
             ),
-            ScrollableVerticalList(),
+            MoreVert(),
           ],
         ),
       ),

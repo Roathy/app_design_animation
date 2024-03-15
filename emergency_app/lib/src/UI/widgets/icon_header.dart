@@ -42,8 +42,9 @@ class IconHeaderBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 180,
+      height: 150,
       width: double.infinity,
+      clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
           borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(45)),
           gradient: LinearGradient(
@@ -77,35 +78,30 @@ class IconHeaderContent extends StatelessWidget {
   Widget build(BuildContext context) {
     final Color whiteOpacity = Colors.white.withOpacity(0.6);
 
-    return Stack(children: [
-      Positioned(
-          top: -60,
-          left: -60,
-          child: Icon(
-            icon,
-            color: whiteOpacity,
-            size: 180,
-          )),
-      Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const SizedBox(width: double.infinity),
-          Text(
-            subtitle,
-            style: const TextStyle(color: Colors.white, fontSize: 12),
-          ),
-          const SizedBox(height: 9),
-          Text(
-            title,
-            style: const TextStyle(color: Colors.white, fontSize: 21),
-          ),
-          Icon(
-            icon,
-            color: Colors.white,
-            size: 90,
-          ),
-        ],
-      ),
-    ]);
+    return Stack(
+      children: [
+        Positioned(top: -69, left: -69, child: Icon(icon, color: whiteOpacity, size: 210)),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SizedBox(width: double.infinity),
+            Text(
+              subtitle,
+              style: const TextStyle(color: Colors.white, fontSize: 12),
+            ),
+            const SizedBox(height: 9),
+            Text(
+              title,
+              style: const TextStyle(color: Colors.white, fontSize: 21),
+            ),
+            Icon(
+              icon,
+              color: Colors.white,
+              size: 90,
+            ),
+          ],
+        ),
+      ],
+    );
   }
 }
