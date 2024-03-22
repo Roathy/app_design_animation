@@ -9,9 +9,24 @@ class EmergencyPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SafeArea(
-        child: Stack(
+    return SafeArea(
+      child: Scaffold(
+        extendBodyBehindAppBar: true,
+        extendBody: true,
+        appBar: AppBar(backgroundColor: Colors.transparent, automaticallyImplyLeading: false, actions: [
+          Column(children: [
+            IconButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: const Icon(
+                  Icons.arrow_back,
+                  color: Colors.white,
+                )),
+            // const MoreVert(),
+          ]),
+        ]),
+        body: const Stack(
           children: [
             ScrollableVerticalList(),
             IconHeader(
@@ -19,7 +34,6 @@ class EmergencyPage extends StatelessWidget {
               title: 'Esto es el TÍTULO',
               icon: Icons.add,
             ),
-            MoreVert(),
           ],
         ),
       ),

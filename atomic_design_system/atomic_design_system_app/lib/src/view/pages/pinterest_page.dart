@@ -13,12 +13,29 @@ class PinterestPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        body: SafeArea(
-            child: Stack(children: [
-      PinterestGrid(),
-      _BottomCenterMenu(),
-    ])));
+    return SafeArea(
+      child: Scaffold(
+          extendBodyBehindAppBar: true,
+          extendBody: true,
+          appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            automaticallyImplyLeading: false,
+            actions: [
+              IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(
+                    Icons.arrow_back,
+                    color: Colors.black,
+                  ))
+            ],
+          ),
+          body: const Stack(children: [
+            PinterestGrid(),
+            _BottomCenterMenu(),
+          ])),
+    );
   }
 }
 

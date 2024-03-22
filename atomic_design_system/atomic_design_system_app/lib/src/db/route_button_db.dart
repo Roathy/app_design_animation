@@ -13,7 +13,7 @@ import '../view/pages/sliver_list_page.dart';
 
 class RouteButtonDB {
   final List<RouteButton> _routeButtonDataList = [
-    RouteButton(Icons.home_outlined, 'Home', Container()),
+    // RouteButton(Icons.home_outlined, 'Home', Container()),
     RouteButton(Icons.view_headline_rounded, 'Headers', const HeadersPage()),
     RouteButton(Icons.play_arrow_outlined, 'Translate Animation', const AnimatedSquarePage()),
     RouteButton(Icons.play_circle_outline, 'Simple Animations', const AnimationsPage()),

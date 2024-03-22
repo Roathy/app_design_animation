@@ -40,6 +40,22 @@ class _CircularProgressPageState extends State<CircularProgressPage> with Single
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      extendBody: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        automaticallyImplyLeading: false,
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: const Icon(
+                Icons.arrow_back,
+                color: Colors.black,
+              ))
+        ],
+      ),
       floatingActionButton: FloatingActionButton.small(
         onPressed: () {
           percent = auxPercent;

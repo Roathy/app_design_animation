@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import '../../repositories/route_button_repository.dart';
 import '../../data/route_button.dart';
@@ -14,42 +13,40 @@ class LauncherPage extends StatelessWidget {
         title: const Text('Designs & Animations'),
       ),
       drawer: Drawer(
-        child: Container(
-          child: Column(
-            children: <Widget>[
-              Container(
-                  height: 210,
-                  width: double.infinity,
-                  padding: const EdgeInsets.all(21),
-                  child: const CircleAvatar(
-                    backgroundColor: Colors.blue,
-                    child: Text('JEVM', style: TextStyle(fontSize: 51, color: Colors.white)),
-                  )),
-              Expanded(child: _OptionsList()),
-              ListTile(
-                  leading: const Icon(Icons.lightbulb_outline_rounded, color: Colors.blue),
-                  title: const Text('Dark Mode'),
+        child: Column(
+          children: <Widget>[
+            Container(
+                height: 210,
+                width: double.infinity,
+                padding: const EdgeInsets.all(21),
+                child: const CircleAvatar(
+                  backgroundColor: Colors.blue,
+                  child: Text('JEVM', style: TextStyle(fontSize: 51, color: Colors.white)),
+                )),
+            Expanded(child: _OptionsList()),
+            ListTile(
+                leading: const Icon(Icons.lightbulb_outline_rounded, color: Colors.blue),
+                title: const Text('Dark Mode'),
+                trailing: Switch.adaptive(
+                  activeColor: Colors.blue,
+                  value: true,
+                  onChanged: (value) {},
+                ),
+                onTap: () {}),
+            SafeArea(
+              bottom: true,
+              top: false,
+              child: ListTile(
+                  leading: const Icon(Icons.dashboard_customize_outlined, color: Colors.blue),
+                  title: const Text('Custom Theme'),
                   trailing: Switch.adaptive(
                     activeColor: Colors.blue,
-                    value: true,
+                    value: false,
                     onChanged: (value) {},
                   ),
                   onTap: () {}),
-              SafeArea(
-                bottom: true,
-                top: false,
-                child: ListTile(
-                    leading: const Icon(Icons.dashboard_customize_outlined, color: Colors.blue),
-                    title: const Text('Custom Theme'),
-                    trailing: Switch.adaptive(
-                      activeColor: Colors.blue,
-                      value: false,
-                      onChanged: (value) {},
-                    ),
-                    onTap: () {}),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

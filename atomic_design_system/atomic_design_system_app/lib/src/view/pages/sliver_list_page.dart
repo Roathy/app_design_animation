@@ -88,12 +88,6 @@ class SliverListPage extends StatelessWidget {
             Positioned(bottom: 0, right: 0, child: _CreateListButton()),
           ],
         ),
-        // child: ListView.builder(
-        //   physics: const BouncingScrollPhysics(),
-        //   itemCount: colorList.length,
-        //   itemBuilder: (context, index) => _ListItem(index),
-        // ),
-        // child: _MainHeader(),
       ),
     );
   }
@@ -184,22 +178,35 @@ class _SliverCustomHeaderDelegate extends SliverPersistentHeaderDelegate {
 class _MainHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
       children: [
-        const Text('New', style: TextStyle(fontSize: 39)),
-        Stack(
+        Column(
           children: [
-            Positioned(
-              bottom: 12,
-              child: Container(
-                height: 3,
-                width: 90,
-                decoration: BoxDecoration(color: colorList[16]),
-              ),
+            const Text('New', style: TextStyle(fontSize: 39)),
+            Stack(
+              children: [
+                Positioned(
+                  bottom: 12,
+                  child: Container(
+                    height: 3,
+                    width: 90,
+                    decoration: BoxDecoration(color: colorList[16]),
+                  ),
+                ),
+                Text('List', style: TextStyle(fontSize: 39, color: colorList[2], fontWeight: FontWeight.bold))
+              ],
             ),
-            Text('List', style: TextStyle(fontSize: 39, color: colorList[2], fontWeight: FontWeight.bold))
           ],
         ),
+        const Expanded(child: SizedBox()),
+        IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.black,
+            ))
       ],
     );
   }
