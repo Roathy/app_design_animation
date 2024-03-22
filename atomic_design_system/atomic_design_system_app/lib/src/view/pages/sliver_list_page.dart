@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 List<Color> colorList = [
   // Index 0 - Purple Blue: #2E3192
