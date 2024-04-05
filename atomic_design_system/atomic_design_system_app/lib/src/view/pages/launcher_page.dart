@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../repositories/route_button_repository.dart';
 import '../../data/route_button.dart';
+import '../../repositories/route_button_repository.dart';
 
 class LauncherPage extends StatelessWidget {
   const LauncherPage({super.key});
@@ -29,7 +29,7 @@ class LauncherPage extends StatelessWidget {
                 title: const Text('Dark Mode'),
                 trailing: Switch.adaptive(
                   activeColor: Colors.blue,
-                  value: true,
+                  value: false,
                   onChanged: (value) {},
                 ),
                 onTap: () {}),

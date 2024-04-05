@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import '../../providers/floating_menu_provider.dart';
 import '../pages/pinterest_page.dart';
-import 'package:flutter/material.dart';
-
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class Button {
   final VoidCallback onPressed;

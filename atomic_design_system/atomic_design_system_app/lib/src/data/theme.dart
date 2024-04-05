@@ -1,4 +1,4 @@
-class Theme {
+class AppTheme {
   bool _darkTheme = false;
   bool _customTheme = false;
 
@@ -14,3 +14,6 @@ class Theme {
     _darkTheme = false;
   }
 }
+
+final AppTheme appTheme = AppTheme();
+final current = appTheme.darkTheme;

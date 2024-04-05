@@ -1,6 +1,9 @@
+import 'package:atomic_design_system_app/src/features/animated_navigation.dart/animated_navigation_page.dart';
 import 'package:flutter/material.dart';
 
 import '../data/route_button.dart';
+import '../features/student_home_page/student_home_page.dart';
+import '../features/welcome_tour/welcome_tour_page.dart';
 import '../view/pages/animated_square_page.dart';
 import '../view/pages/animations_page.dart';
 import '../view/pages/circular_progress_page.dart';
@@ -13,7 +16,9 @@ import '../view/pages/sliver_list_page.dart';
 
 class RouteButtonDB {
   final List<RouteButton> _routeButtonDataList = [
-    // RouteButton(Icons.home_outlined, 'Home', Container()),
+    RouteButton(Icons.handyman, 'Animated Navigation', const AnimatedNavigationPage()),
+    RouteButton(Icons.handyman, 'Student\'s_Home', const StudentHomePage()),
+    RouteButton(Icons.tour_outlined, 'Welcome Tour', const WelcomeTourPage()),
     RouteButton(Icons.view_headline_rounded, 'Headers', const HeadersPage()),
     RouteButton(Icons.play_arrow_outlined, 'Translate Animation', const AnimatedSquarePage()),
     RouteButton(Icons.play_circle_outline, 'Simple Animations', const AnimationsPage()),
@@ -23,19 +28,9 @@ class RouteButtonDB {
     RouteButton(Icons.medical_services_outlined, 'Header & VerticalList', const EmergencyPage()),
     RouteButton(Icons.photo_album_outlined, 'Pinterest', const PinterestPage()),
     RouteButton(Icons.swap_vertical_circle_outlined, 'Slivers', const SliverListPage()),
-    // RouteButton(Icons.dashboard_outlined, 'Dashboard', Container()),
-    // RouteButton(Icons.dashboard_customize_outlined, 'Themes', Container()),
   ];
 
   List<RouteButton> get routeButtonState {
     return _routeButtonDataList;
   }
-
-  // void pushRouteButton(RouteButton data) {
-  //   _routeButtonDataList.add(data);
-  // }
-
-  // void popRouteButton() {
-  //   _routeButtonDataList.removeLast();
-  // }
 }

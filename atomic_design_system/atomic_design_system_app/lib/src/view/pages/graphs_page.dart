@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../widgets/radial_progress.dart';
 
 class GraphsPage extends StatefulWidget {
@@ -16,59 +17,36 @@ class _GraphsPageState extends State<GraphsPage> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       extendBody: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        automaticallyImplyLeading: false,
-        actions: [
-          IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: const Icon(
-                Icons.arrow_back,
-                color: Colors.black,
-              ))
-        ],
-      ),
+      appBar: AppBar(backgroundColor: Colors.transparent, automaticallyImplyLeading: false, actions: [
+        IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.black,
+            ))
+      ]),
       floatingActionButton: FloatingActionButton.small(
-        onPressed: () {
-          setState(() {
-            percent += 5;
-            if (percent > 100) {
-              percent = 0.0;
-            }
-          });
-        },
-        child: const Icon(Icons.refresh_sharp),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              CustomRadialProgress(percent: percent, progressColor: Colors.blue),
-              CustomRadialProgress(
-                percent: percent,
-                progressColor: Colors.pink,
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              CustomRadialProgress(
-                percent: percent,
-                progressColor: Colors.green,
-              ),
-              CustomRadialProgress(
-                percent: percent,
-                progressColor: Colors.yellow,
-              ),
-            ],
-          ),
-        ],
-      ),
+          onPressed: () {
+            setState(() {
+              percent += 5;
+              if (percent > 100) {
+                percent = 0.0;
+              }
+            });
+          },
+          child: const Icon(Icons.refresh_sharp)),
+      body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+          CustomRadialProgress(percent: percent, progressColor: Colors.blue),
+          CustomRadialProgress(percent: percent, progressColor: Colors.pink),
+        ]),
+        Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+          CustomRadialProgress(percent: percent, progressColor: Colors.green),
+          CustomRadialProgress(percent: percent, progressColor: Colors.yellow),
+        ]),
+      ]),
     );
   }
 }
@@ -85,15 +63,12 @@ class CustomRadialProgress extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150,
-      width: 150,
-      decoration: const BoxDecoration(color: Colors.white),
-      child: RadialProgress(
-        percent: percent,
-        // circleColor: Colors.grey,
-        progressColor: progressColor,
-        // progressStrokeWidth: 4.5,
-      ),
-    );
+        height: 150,
+        width: 150,
+        decoration: const BoxDecoration(color: Colors.white),
+        child: RadialProgress(
+          percent: percent,
+          progressColor: progressColor,
+        ));
   }
 }
