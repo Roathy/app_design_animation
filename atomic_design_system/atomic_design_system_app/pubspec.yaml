@@ -45,6 +45,14 @@ dependencies:
   http: ^1.2.1
   rive: ^0.13.1
   kg_charts: ^0.0.5
+  equatable: ^2.0.5
+  get_it: ^7.6.8
+  flutter_bloc: ^8.1.5
+  dartz: ^0.10.1
+  connectivity_plus: ^6.0.2
+  shared_preferences: ^2.2.2
+  bloc: ^8.1.4
+  mockito: ^5.4.4
 
 dev_dependencies:
   flutter_test:
