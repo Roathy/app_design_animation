@@ -1,9 +1,16 @@
 import 'package:equatable/equatable.dart';
 
-class Session extends Equatable {
+import 'data.dart';
+import 'api_response.dart';
+
+class Session extends Equatable implements APIResponse {
+  @override
   final bool success;
+  @override
   final String message;
-  final Map<String, String> data;
+  @override
+  final Data data;
+  // final Map<String, String> data;
 
   const Session({required this.success, required this.message, required this.data});
 
