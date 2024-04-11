@@ -1,9 +1,9 @@
 import 'package:equatable/equatable.dart';
 
-import 'data.dart';
 import 'api_response.dart';
+import 'data.dart';
 
-class Session extends Equatable implements APIResponse {
+class Session implements APIResponse, Equatable {
   @override
   final bool success;
   @override
