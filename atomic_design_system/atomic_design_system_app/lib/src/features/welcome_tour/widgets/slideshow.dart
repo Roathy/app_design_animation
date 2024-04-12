@@ -1,6 +1,7 @@
-import 'package:atomic_design_system_app/src/features/welcome_tour/welcome_tour_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../welcome_tour_page.dart';
 
 final currentIndexPage = StateProvider<int>((ref) => 0);
 
@@ -14,12 +15,10 @@ class SlideShow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        _SlideShow(slides),
-        _SlidesNav(),
-      ],
-    );
+    return Column(children: [
+      _SlideShow(slides),
+      _SlidesNav(),
+    ]);
   }
 }
 
@@ -52,14 +51,13 @@ class _SlideShowState extends ConsumerState<_SlideShow> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: PageView(
-        physics: const BouncingScrollPhysics(
-          decelerationRate: ScrollDecelerationRate.fast,
-        ),
-        controller: pageViewController,
-        children: widget.slides.map((slide) => _Slide(slide: slide)).toList(),
+        child: PageView(
+      physics: const BouncingScrollPhysics(
+        decelerationRate: ScrollDecelerationRate.fast,
       ),
-    );
+      controller: pageViewController,
+      children: widget.slides.map((slide) => _Slide(slide: slide)).toList(),
+    ));
   }
 }
 
@@ -84,17 +82,14 @@ class _SlidesNav extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
         height: 27,
-        child: Consumer(
-          builder: (context, ref, child) {
-            return Row(
+        child: Consumer(builder: (context, ref, child) {
+          return Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(
                 ref.watch(listLength),
                 (index) => _SlideNavIndicator(index: index),
-              ),
-            );
-          },
-        ));
+              ));
+        }));
   }
 }
 
@@ -107,15 +102,14 @@ class _SlideNavIndicator extends ConsumerWidget {
     final int pageViewIndex = ref.watch(currentIndexPage);
 
     return AnimatedContainer(
-      curve: Curves.bounceOut,
-      duration: const Duration(milliseconds: 300),
-      height: 9,
-      width: 9,
-      margin: const EdgeInsets.symmetric(horizontal: 3.0),
-      decoration: BoxDecoration(
-        color: (pageViewIndex == index) ? Colors.grey : Colors.blue,
-        shape: BoxShape.circle,
-      ),
-    );
+        curve: Curves.bounceOut,
+        duration: const Duration(milliseconds: 300),
+        height: 9,
+        width: 9,
+        margin: const EdgeInsets.symmetric(horizontal: 3.0),
+        decoration: BoxDecoration(
+          color: (pageViewIndex == index) ? Colors.grey : Colors.blue,
+          shape: BoxShape.circle,
+        ));
   }
 }

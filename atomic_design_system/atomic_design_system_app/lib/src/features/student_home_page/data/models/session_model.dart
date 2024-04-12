@@ -16,27 +16,18 @@ class SessionModel extends Session implements Equatable {
     return SessionModel(
       success: json['success'],
       message: json['message'],
-      data: Data(data: {}),
+      data: Data(data: json['data']),
     );
-
-    // late String tokenValue;
-
-    // if (json.containsKey('data')) {
-    //   Map<String, dynamic> dataMap = json['data'];
-    //   if (dataMap.containsKey('token')) {
-    //     tokenValue = dataMap['token'];
-    //   }
-    // }
-    // print(tokenValue);
-
-    // return SessionModel(
-    //   success: json['success'],
-    //   message: json['message'],
-    //   data: Data(data: {
-    //     'token': tokenValue,
-    //   }),
-    // );
   }
+
+  Map<String, dynamic> toJSON() {
+    return {
+      'success': success,
+      'message': message,
+      'data': data,
+    };
+  }
+
   @override
   List<Object> get props => [
         success,

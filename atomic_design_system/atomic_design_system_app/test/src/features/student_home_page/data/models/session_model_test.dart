@@ -9,18 +9,13 @@ import 'package:atomic_design_system_app/src/features/student_home_page/domain/e
 import '../../../../../fixtures/fixture_reader.dart';
 
 void main() {
-  final tSessionModel = SessionModel(
+  const tSessionModel = SessionModel(
     success: true,
     message: 'test message',
-    data: Data(data: {}),
+    data: Data(data: {
+      'token': 'test token'
+    }),
   );
-
-  //   success: true,
-  //   message: 'test message',
-  //   data: Data(data: {
-  //     'token': 'test token'
-  //   }),
-  // );
 
   test('should be a subclass of Session entity', () async {
     // assert
@@ -39,7 +34,27 @@ void main() {
       // assert
       // expect(result is Session, true);
       // expect(result, tSessionModel);
-      expect(result, equals(tSessionModel));
+      // expect(result, equals(tSessionModel));
+      expect(result.success, tSessionModel.success);
+      expect(result.message, tSessionModel.message);
+      expect(result.data, tSessionModel.data);
+      expect(result.data.props[0], tSessionModel.data.props[0]);
+    });
+  });
+
+  group('toJSON', () {
+    test('should return a JSON map containing the proper data', () async {
+      // arrange
+      final result = tSessionModel.toJSON();
+      final expectedMap = {
+        'success': true,
+        'message': 'test message',
+        'data': const Data(data: {
+          'token': 'test token'
+        }),
+      };
+      // assert
+      expect(result, expectedMap);
     });
   });
 }

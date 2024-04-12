@@ -1,6 +1,6 @@
-import 'package:rive/rive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:rive/rive.dart';
 
 import '../../db/welcome_slides_db.dart';
 import 'widgets/slideshow.dart';
@@ -22,9 +22,7 @@ class WelcomeTourPage extends ConsumerWidget {
               multimedia: slide.multimedia,
             ))
         .toList();
-    return Scaffold(
-      body: SafeArea(child: SlideShow(slides: slides)),
-    );
+    return Scaffold(body: SafeArea(child: SlideShow(slides: slides)));
   }
 }
 
@@ -38,30 +36,24 @@ class _AnimationContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        const SizedBox(height: 27),
-        Text(
-          title,
-          style: TextStyle(color: Colors.blue[600], fontSize: 24, letterSpacing: 0.6),
-        ),
-        const SizedBox(height: 27),
-        textContent,
-        note != null
-            ? Text(
-                note ?? '',
-                style: const TextStyle(fontSize: 6),
-              )
-            : const SizedBox(),
-        const SizedBox(height: 27),
-        Expanded(
-          // width: double.infinity,
-          // height: 180,
-          // padding: const EdgeInsets.symmetric(horizontal: 30),
-          child: assetUrl == '' ? multimedia! : RiveAnimation.asset(assetUrl),
-        ),
-      ],
-    );
+    return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+      const SizedBox(height: 27),
+      Text(
+        title,
+        style: TextStyle(color: Colors.blue[600], fontSize: 24, letterSpacing: 0.6),
+      ),
+      const SizedBox(height: 27),
+      textContent,
+      note != null
+          ? Text(
+              note ?? '',
+              style: const TextStyle(fontSize: 6),
+            )
+          : const SizedBox(),
+      const SizedBox(height: 27),
+      Expanded(
+        child: assetUrl == '' ? multimedia! : RiveAnimation.asset(assetUrl),
+      )
+    ]);
   }
 }

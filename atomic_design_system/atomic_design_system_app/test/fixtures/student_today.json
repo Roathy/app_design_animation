@@ -1,0 +1,24 @@
+{
+    "success": true,
+    "message": "test text",
+    "data": {
+        "egp": {
+            "id_serie": 1,
+            "serie": "test text",
+            "id_nivel": 1,
+            "nivel": "test text",
+            "nivel_tag": "test text",
+            "id_unidad": 1,
+            "int_unidad": 1,
+            "unidad": "test text",
+            "id_actividad": 1,
+            "int_actividad": 1,
+            "titulo": "test text",
+            "instrucciones": "test text",
+            "estatus": 1,
+            "cover_actividad": "test text"
+        },
+        "isa": false,
+        "esp": false
+    }
+}
