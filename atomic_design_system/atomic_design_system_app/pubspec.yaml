@@ -53,6 +53,7 @@ dependencies:
   shared_preferences: ^2.2.2
   bloc: ^8.1.4
   mockito: ^5.4.4
+  data_connection_checker_nulls: ^0.0.2
 
 dev_dependencies:
   flutter_test:

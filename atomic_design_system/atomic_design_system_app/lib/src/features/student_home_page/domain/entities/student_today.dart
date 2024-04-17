@@ -1,6 +1,5 @@
-import 'package:atomic_design_system_app/src/features/student_home_page/domain/entities/data.dart';
-
 import 'api_response.dart';
+import 'data.dart';
 
 class StudentToday implements APIResponse {
   @override

@@ -1,7 +1,9 @@
 import 'dart:convert';
-import '../../data/post.dart';
-import 'package:http/http.dart' as http;
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+
+import '../../data/post.dart';
 
 // homepage class
 class FetchApiPage extends StatefulWidget {

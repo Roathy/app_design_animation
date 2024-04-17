@@ -1,4 +1,5 @@
 import 'dart:convert'; // required to encode/decode json data
+
 import 'package:http/http.dart' as http;
 
 // Model class

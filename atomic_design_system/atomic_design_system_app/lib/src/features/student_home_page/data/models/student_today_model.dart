@@ -4,9 +4,10 @@ import 'package:atomic_design_system_app/src/features/student_home_page/domain/e
 import 'package:equatable/equatable.dart';
 
 import '../../domain/entities/session.dart';
+import '../../domain/entities/student_today.dart';
 
-class StudentTodayModel extends Session implements Equatable {
-  const StudentTodayModel({
+class StudentTodayModel extends StudentToday implements Equatable {
+  StudentTodayModel({
     required bool success,
     required String message,
     required Data data,

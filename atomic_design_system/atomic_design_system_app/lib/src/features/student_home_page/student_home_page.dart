@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'widgets/avatar_popup_menu.dart';
 import 'widgets/vertical_sliver_list.dart';
-import 'package:flutter/material.dart';
 
 class StudentHomePage extends StatelessWidget {
   const StudentHomePage({super.key});
