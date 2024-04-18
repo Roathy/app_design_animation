@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:atomic_design_system_app/src/features/student_home_page/data/models/session_model.dart';
+import 'package:atomic_design_system_app/src/features/session_page/data/models/session_model.dart';
 import 'package:atomic_design_system_app/src/features/student_home_page/domain/entities/data.dart';
 import 'package:atomic_design_system_app/src/features/student_home_page/domain/entities/session.dart';
 

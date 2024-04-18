@@ -3,7 +3,6 @@ import 'package:atomic_design_system_app/src/features/student_home_page/domain/e
 import 'package:atomic_design_system_app/src/features/student_home_page/domain/entities/egp.dart';
 import 'package:equatable/equatable.dart';
 
-import '../../domain/entities/session.dart';
 import '../../domain/entities/student_today.dart';
 
 class StudentTodayModel extends StudentToday implements Equatable {

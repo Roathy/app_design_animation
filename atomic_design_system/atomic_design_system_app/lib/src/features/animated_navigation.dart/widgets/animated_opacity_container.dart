@@ -1,6 +1,6 @@
 // import 'dart:math' as math;
 
-import 'package:atomic_design_system_app/src/features/student_home_page/widgets/avatar_popup_menu.dart';
+import 'package:atomic_design_system_app/src/features/student_home_page/view/widgets/avatar_popup_menu.dart';
 import 'package:flutter/material.dart';
 
 class AnimatedOpacityContainer extends StatefulWidget {

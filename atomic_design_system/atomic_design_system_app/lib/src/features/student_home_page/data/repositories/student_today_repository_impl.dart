@@ -5,8 +5,8 @@ import '../../../../../core/error/failure.dart';
 import '../../../../../core/network/network_info.dart';
 import '../../domain/entities/student_today.dart';
 import '../../domain/repositories/student_today_repository.dart';
-import '../datasources/student_today/session_local_data_source.dart';
-import '../datasources/student_today/session_remote_data_source.dart';
+import '../datasources/student_today_local_data_source.dart';
+import '../datasources/student_today_remote_data_source.dart';
 
 class StudentTodayRespositoryImpl implements StudentTodayRepository {
   final StudentTodayRemoteDataSource remoteDataSource;

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../data/route_button.dart';
 import '../features/animated_navigation.dart/animated_navigation_page.dart';
-import '../features/student_home_page/student_home_page.dart';
+import '../features/student_home_page/view/pages/student_home_page.dart';
 import '../features/welcome_tour/welcome_tour_page.dart';
 import '../view/pages/animated_square_page.dart';
 import '../view/pages/animations_page.dart';

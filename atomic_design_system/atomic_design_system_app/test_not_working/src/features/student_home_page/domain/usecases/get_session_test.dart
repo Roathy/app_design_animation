@@ -5,7 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:atomic_design_system_app/core/usecases/usecase.dart';
 import 'package:atomic_design_system_app/src/features/student_home_page/domain/entities/data.dart';
 import 'package:atomic_design_system_app/src/features/student_home_page/domain/entities/session.dart';
-import 'package:atomic_design_system_app/src/features/student_home_page/domain/usecases/get_session.dart';
+import 'package:atomic_design_system_app/src/features/session_page/domain/usecases/get_session.dart';
 import 'package:atomic_design_system_app/src/features/student_home_page/domain/repositories/session_repository.dart';
 
 class MockSessionRepository extends Mock implements SessionRepository {}
