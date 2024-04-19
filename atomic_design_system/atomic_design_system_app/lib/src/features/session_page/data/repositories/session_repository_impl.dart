@@ -1,10 +1,10 @@
-import '../../domain/entities/session.dart';
-import '../../domain/repositories/session_repository.dart';
 import 'package:dartz/dartz.dart';
 
 import '../../../../../core/error/exception.dart';
 import '../../../../../core/error/failure.dart';
 import '../../../../../core/network/network_info.dart';
+import '../../domain/entities/session.dart';
+import '../../domain/repositories/session_repository.dart';
 import '../datasources/session_local_data_source.dart';
 import '../datasources/session_remote_data_source.dart';
 

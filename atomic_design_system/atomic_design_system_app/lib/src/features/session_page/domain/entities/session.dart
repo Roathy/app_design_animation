@@ -10,7 +10,6 @@ class Session implements APIResponse, Equatable {
   final String message;
   @override
   final Data data;
-  // final Map<String, String> data;
 
   const Session({required this.success, required this.message, required this.data});
 

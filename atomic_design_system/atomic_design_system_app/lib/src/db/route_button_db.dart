@@ -1,3 +1,4 @@
+import 'package:atomic_design_system_app/src/features/session_page/view/pages/session_page.dart';
 import 'package:flutter/material.dart';
 
 import '../data/route_button.dart';
@@ -17,6 +18,7 @@ import '../view/pages/sliver_list_page.dart';
 class RouteButtonDB {
   final List<RouteButton> _routeButtonDataList = [
     RouteButton(Icons.handyman, 'Animated Navigation', const AnimatedNavigationPage()),
+    RouteButton(Icons.handyman, 'Session Page', const SessionPage()),
     RouteButton(Icons.handyman, 'Student\'s_Home', const StudentHomePage()),
     RouteButton(Icons.tour_outlined, 'Welcome Tour', const WelcomeTourPage()),
     RouteButton(Icons.view_headline_rounded, 'Headers', const HeadersPage()),

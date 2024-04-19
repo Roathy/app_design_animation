@@ -1,6 +1,6 @@
 import 'data.dart';
 
-class APIResponse {
+abstract class APIResponse {
   final bool success;
   final String message;
   final Data data;
